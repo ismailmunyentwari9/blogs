@@ -1,0 +1,17 @@
+<html>
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/nav') %>
+    
+</body>
+
+<div class="blog-details">
+    <div class="blog-block">
+        <h2>TiTle:<%= blog.title%></h2>
+        <p>snippet:<%= blog.snippet%></p>
+        <p>Body:<%= blog.body%></p>
+    </div>
+    <a href="/blog_remove/<%=blog._id%>"><span>🗑</span></a>
+</div>
+
+</html>

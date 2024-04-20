@@ -1,0 +1,16 @@
+<html lang="en">
+<%- include('./partials/head.ejs')%>
+<body>
+   <%- include('./partials/nav.ejs')%>
+   
+    <form action="/blogs" method="POST">
+        <h1>Bog Things</h1>
+        <input type="text" placeholder="Enter Blog Title" name="title">
+        <input type="text" placeholder="Enter Blog Snippet" name="snippet">
+        <input type="text" placeholder="Enter Blog Body" name="body">
+       <button type="submit">send</button>
+    </form>
+    <%- include('./partials/footer') %>
+</body>
+</html>
+

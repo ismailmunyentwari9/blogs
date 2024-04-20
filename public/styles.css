@@ -1,0 +1,67 @@
+
+     
+    @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    nav{
+        border-bottom: 2px solid gray;
+    }
+    ul{
+        display: flex;
+        gap:12px;
+        justify-content: end;
+        margin: 2% 10%;
+        
+
+    }
+    li{
+        list-style-type:none;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        font-family: "PT Serif", serif;
+    }
+    .blog-block{
+        width: 89%;
+        margin: 2% 5%;
+        border-bottom: 0.5px solid #d0e0d5;
+        border-left: 3px solid rgb(128, 64, 0);
+        padding: 5px 5px;
+    }
+        
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin:5% auto;
+        gap:12px;
+    }
+    input{
+        border-radius: 5px;
+        height: 2rem;
+    }
+.oops{
+    background-color:white;
+    color:black;
+
+}
+    .oops p{
+        display: flex;
+        justify-content: center;
+        font-size:45px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    button{
+        color:white;
+        background-color:red;
+    }
+    .blog-details{
+        display: flex;
+        align-items: center;
+    }
+    .blog-details span{
+        cursor: pointer;
+        margin-right: 5%;
+        font-size: 35px;
+        font-weight: bold;
+    }
