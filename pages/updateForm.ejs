@@ -1,0 +1,18 @@
+<html lang="en">
+<%- include('./partials/head.ejs')%>
+<body>
+   <%- include('./partials/nav.ejs')%>
+   
+        <form action="/updateData/<%=data._id%>" method="put">
+            <input type="hidden" name="_method" value="PUT">
+        <h1>Update Blog</h1>
+        <input type="text" value="<%= data.title %>" name="title">
+        <input type="text" value="<%= data.snippet %>"  name="snippet">
+        <input type="text"value="<%= data.body %>" name="body">
+       <button type="submit">send</button>
+    </form>
+
+    <%- include('./partials/footer') %>
+</body>
+</html>
+

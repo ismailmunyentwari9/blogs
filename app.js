@@ -1,4 +1,6 @@
 const express = require('express');
+const methodOverride = require('method-override');
+
 const blogController = require('./controller/blogsController')
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -11,6 +13,7 @@ app.set('views', 'pages');
 // ..........middle wares and statics .........
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}))
+// app.use(methodOverride('_method'));
 app.use(morgan('tiny'));
 
 // connection to DB......................
@@ -27,4 +30,7 @@ app.get('/blog',blogController.blog_lists);
 app.post('/blogs',blogController.blog_create_post)
 app.get('/single/:id_value',blogController.blog_details);
 app.get('/blog_remove/:id',blogController.blog_delete);
+app.post('/updateData/:id_value',blogController.UpdateBlog);
+app.get('/update/:id_value',blogController.createUpdate);
 app.use(blogController.blog_err_page);
+

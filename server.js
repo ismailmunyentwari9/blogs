@@ -22,7 +22,7 @@ files.readFile(path,(error,data)=>{
     }
     else{
         
-        response.write(data);
+        response.write(data.toString());
         response.end();
     }
 })

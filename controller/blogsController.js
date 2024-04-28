@@ -1,5 +1,6 @@
 //blogs_index, blog_details,blog_delete,blog_create_get,blog_create_post.
 
+const Blog = require('../models/blogs');
 const Blogs =require('../models/blogs');
 
 // ..............blog index pages.............................
@@ -55,7 +56,7 @@ const blog_create_post = (req,resp)=>{
     const blog =new  Blogs (req.body);
      blog.save()
      .then((results)=>{
-      resp.redirect('/blog');
+      resp.redirect('blog');
      })
      .catch((err)=>{
       console.log(err);
@@ -75,6 +76,33 @@ const blog_about_page = (req,resp)=>{
     // resp.sendFile('./pages/about.html',{root:__dirname});
    resp.render('about',{title:'About Page'})
 }
+
+
+//update form
+const createUpdate =(req,resp)=>{
+    const id = req.params.id_value;
+    const dataToUpdate = Blog.findById(id)
+    .then((dataToUpdate)=>{
+        resp.render('updateForm',{title:'Update Form',data:dataToUpdate})
+    })
+    .catch((err)=>{
+        console.error(err);
+    })
+}
+
+//  update blog...........
+
+const UpdateBlog = (req,resp)=>{
+    const id = req.params.id_value;
+    const updatedData = req.bog;
+  Blog.findByIdAndUpdate(id,updatedData,{new:true})
+  .then((updateResults)=>{
+    resp.redirect('/blog');
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+}
 module.exports={
     blogs_index,
     blog_details,
@@ -83,5 +111,7 @@ module.exports={
     blog_lists,
     blog_err_page,
     blog_about_page,
-    blog_form 
+    blog_form,
+    UpdateBlog,
+    createUpdate
 }
